@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Unit Converter</title>
+    <link rel="stylesheet" href="style.css">
+
+<body>
+    <div class="header" id="header">
+        <h1 class="title" id="title">
+            Unit Converter
+            <a href="#" onclick="change();"><i class="fa fa-adjust"></i></a>
+        </h1>
+    </div>
+
+    <div class="main">
+        <fieldset>
+            <legend>
+                What to convert
+            </legend>
+            <p>CHOOSE A MEASUREMENT CATAGORY TO CONVERT</p>
+
+            <select id="categories" onchange="displayFromSection()">
+                <option value="default" selected disabled hidden id="changeTextForSmallScreen">Select</option>
+                <option value="Area">Area</option>
+                <option value="Length">Length</option>
+                <option value="Mass">Mass</option>
+                <option value="Speed">Speed</option>
+                <option value="Pressure">Pressure</option>
+                <option value="Temperature">Temperature</option>
+                <option value="Time">Time</option>
+                <option value="Volume">Volume</option>
+            </select>
+        </fieldset>
+
+        <br>
+        <br>
+
+        <fieldset id="from">
+            <legend>
+                From
+            </legend>
+
+            <input id="fromInput" type="number" min="0" placeholder="Enter a value"
+                onkeyup="validity.valid||(value='');displayToSection();">
+            <select id="fromSelect" onchange="displayToSection()">
+                <option value="default" selected disabled hidden>Choose a unit</option>
+            </select>
+
+        </fieldset>
+        <br>
+        <br>
+
+        <fieldset id="to">
+            <legend>
+                To
+            </legend>
+
+            <select id="toSelect" onchange="displayAnswer()">
+                <option value="default" disabled hidden>Choose a unit</option>
+            </select>
+            <p id="answer">
+            </p>
+        </fieldset>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
